@@ -13,7 +13,6 @@ public class DemoApplication {
 		SpringApplication.run(DemoApplication.class, args);
 	}
 
-
     @GetMapping("/")
     public String home() {
         return "🚀 Hello from Jenkins + Spring Boot!";
