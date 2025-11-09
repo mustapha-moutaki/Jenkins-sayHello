@@ -16,23 +16,28 @@ pipeline {
 
         stage('Build') {
             steps {
-               dir('demo') {                     // path of pom to exicute the mvn
-                sh 'mvn clean package -DskipTests'
-                 }
+                echo '🔨 Building with Maven...'
+                dir('demo') {                     // 👈 هذا هو الحل
+                    sh 'mvn clean package -DskipTests'
+                }
             }
         }
 
         stage('Test') {
             steps {
                 echo '🧪 Running tests...'
-                sh 'mvn test'
+                dir('demo') {
+                    sh 'mvn test'
+                }
             }
         }
 
         stage('Deploy') {
             steps {
                 echo '🚀 Starting Spring Boot app...'
-                sh 'nohup java -jar target/*.jar > app.log 2>&1 &'
+                dir('demo') {
+                    sh 'nohup java -jar target/*.jar > app.log 2>&1 &'
+                }
             }
         }
     }
