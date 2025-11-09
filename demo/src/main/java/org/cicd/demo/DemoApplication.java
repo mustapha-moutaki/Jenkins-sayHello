@@ -18,3 +18,4 @@ public class DemoApplication {
         return "🚀 Hello from Jenkins + Spring Boot!";
     }
 }
+
