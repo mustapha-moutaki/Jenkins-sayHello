@@ -16,8 +16,9 @@ pipeline {
 
         stage('Build') {
             steps {
-                echo '🔨 Building with Maven...'
+               dir('demo') {                     // path of pom to exicute the mvn
                 sh 'mvn clean package -DskipTests'
+                 }
             }
         }
 
