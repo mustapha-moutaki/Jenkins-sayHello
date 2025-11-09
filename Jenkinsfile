@@ -24,6 +24,7 @@ pipeline {
             }
         }
 
+
         stage('Test') { // here we run the tests
             steps { // if the tests failed pipline stop - important--we can customize the failer behavior if needed
                 echo '🧪 Running tests...'
