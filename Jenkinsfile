@@ -31,6 +31,7 @@ pipeline {
                     sh 'mvn test'
                 }
             }
+
         }
 
         stage('Deploy') { // run the app in backgorund

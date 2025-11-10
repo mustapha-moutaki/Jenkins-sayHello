@@ -5,6 +5,8 @@ COPY /demo/pom.xml .
 COPY demo/src ./src
 RUN mvn clean package -DskipTests
 
+
+
 # Stage 2: Run the app
 FROM eclipse-temurin:17-jre
 WORKDIR /app
