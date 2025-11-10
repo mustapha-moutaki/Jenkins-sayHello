@@ -10,7 +10,7 @@ pipeline {
         stage('Checkout') { // clone the project from the repsotory
         // it's important because it's the code source that we use
             steps {
-                echo '🔍 Checking out code. ..'
+                echo '🔍 Checking out code.   ..'
                 checkout scm // this is the responsible of getting the code from the repo
             }
         }
