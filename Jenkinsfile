@@ -34,6 +34,7 @@ pipeline {
 
         }
 
+
         stage('Deploy') { // run the app in backgorund
             steps {
                 echo '🚀 Starting Spring Boot app...'
