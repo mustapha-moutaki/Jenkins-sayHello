@@ -17,7 +17,7 @@ pipeline {
 
         stage('Build') { // build the project
             steps {
-                echo '🔨 Building with Maven...'
+                echo '🔨 Building with Maven...   '
                 dir('demo') {      // we tell jenkes to go to demo directory t find pom.xml to run mvn
                     sh 'mvn clean package -DskipTests' // run mvn and skip tests
                 }
