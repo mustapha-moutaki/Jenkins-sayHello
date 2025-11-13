@@ -651,6 +651,50 @@ retry(3) {
 
 ---
 
+
+# -Advanced -
+```
+your-enterprise-project/
+│
+├── jenkins/
+│   │
+│   ├── pipelines/
+│   │   ├── Jenkinsfile.ci              # 1. Build & Test only
+│   │   ├── Jenkinsfile.deploy-dev      # 2. Deploy to Development
+│   │   ├── Jenkinsfile.deploy-staging  # 3. Deploy to Staging
+│   │   ├── Jenkinsfile.deploy-prod     # 4. Deploy to Production
+│   │   ├── Jenkinsfile.rollback        # 5. Rollback Pipeline
+│   │   ├── Jenkinsfile.hotfix          # 6. Hotfix Pipeline
+│   │   ├── Jenkinsfile.db-migration    # 7. Database Migrations
+│   │   └── Jenkinsfile.scheduled       # 8. Scheduled Jobs
+│   │
+│   ├── shared-libraries/               # Shared code between pipelines
+│   │   └── vars/
+│   │       ├── buildApp.groovy
+│   │       ├── deployApp.groovy
+│   │       ├── runTests.groovy
+│   │       ├── dockerBuild.groovy
+│   │       └── notifyTeam.groovy
+│   │
+│   ├── config/
+│   │   ├── environments/
+│   │   │   ├── dev.yaml
+│   │   │   ├── staging.yaml
+│   │   │   └── production.yaml
+│   │   └── quality-gates.json
+│   │
+│   └── scripts/
+│       ├── deploy.sh
+│       ├── rollback.sh
+│       ├── health-check.sh
+│       └── smoke-tests.sh
+│
+├── src/
+├── pom.xml
+└── README.md
+```
+---
+
 ## 🎉 Final Words
 
 Congratulations! You now have everything you need to create, understand, and maintain Jenkins pipelines for Spring Boot projects. Remember:
@@ -667,13 +711,6 @@ Happy building, testing, and deploying! 🚀
 
 ---
 
-## 📞 Need Help?
-
-- **Jenkins Documentation:** [jenkins.io/doc](https://jenkins.io/doc)
-- **Spring Boot Guides:** [spring.io/guides](https://spring.io/guides)
-- **Stack Overflow:** Tag your questions with `jenkins` and `spring-boot`
-
----
 
 *Created with ♥ for developers who believe in automation*
 

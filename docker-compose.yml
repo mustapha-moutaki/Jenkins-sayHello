@@ -3,7 +3,7 @@ services:
     image: jenkins/jenkins:lts
     container_name: jenkins
     ports:
-      - "9090:8080"    # Jenkins على منفذ 9090
+      - "9090:8080"    # Jenkins   9090
       - "50000:50000"
     volumes:
       - jenkins_home:/var/jenkins_home
@@ -19,7 +19,7 @@ services:
     build: .
     container_name: spring-app
     ports:
-      - "8081:8080"    # تطبيق Spring Boot على 8081
+      - "8081:8080"
     depends_on:
       - jenkins
 
